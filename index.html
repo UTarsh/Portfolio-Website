@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8456453e39.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/free.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <h1>Hello, My name is <span>UTKARSH</span> and I'm from<span> INDIA</span></h1>
+        </div>
+    </div>
+</div>
+
+
+<!---------------------------about----------------------------------->
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/me2.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Utkarsh Kumar Jha, and I am an aspiring Data Scientist. Over the past years, I have honed my skills in Software Engineering, Data & AI Engineering, Full-Stack Development and Software Testing. I am a highly motivated individual who thrives in fast-paced environments and am accustomed to working collaboratively to achieve common goals.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Data Engineering</span><br>SQL, Python </li>
+                        <li><span>Frontend Development</span><br>HTML, CSS, JS</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2025-present</span><br>Data & AI Engineer</li>
+                        <li><span>2022-2023</span><br>Software Engineer Trainee</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019-2023</span><br>B.Tech(CSE)-Guru Gobind Singh Indraprastha University</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------services----------------------------->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Data Engineering</h2>
+                <p>Designing, developing, and maintaining robust databases, scalable data warehouses, and efficient data lakes, while performing essential tasks such as data preprocessing, cleansing, transformation, and optimization to ensure data quality and usability.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Frontend Development</h2>
+                <p>Designing and implementing user-facing aspects of websites or applications by writing clean, efficient, and maintainable code with technologies like HTML, CSS, and JavaScript to create interactive, dynamic, and responsive interfaces.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>           
+    </div>
+</div>
+
+<!------------------------------------contact----------------------------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> utkkumar11@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 7291010166</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/utkarsh-kumar-66093822b/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/u1karshhh/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/UTarsh"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.youtube.com/@ujayjumpman"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                    <a href="images/Utkarsh CV.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Messsage"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>            
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @ujayjumpman. Made By <i class="fa-solid fa-dragon"></i> Utkarsh</p>
+    </div>
+</div>
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+</script>
+
+<script>
+
+      var sidemeu = document.getElementById("sidemenu");
+
+      function openmenu(){
+        sidemeu.style.right = "0";
+      }
+
+      function closemenu(){
+        sidemeu.style.right = "-200px";
+      }
+
+
+</script>
+
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwR6GhOTE9mMctX2S9t6JxlpBvFMjq-9o8dmVicr4Uj8raHWsnrZf8q0IKrGWniwPD3/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Mesaage sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },500)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+</body>
+</html> 
